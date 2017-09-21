@@ -518,8 +518,8 @@ elif [ -f "$JAVACMD" ] && [ -x "$JAVACMD" ] ; then
 			-Xdock:name="${CFBundleName}" \
 			${JVMOptions:+$JVMOptions }\
 			${JVMDefaultOptions:+$JVMDefaultOptions }\
-			${JVMMainClass}\
 			${JVMArguments:+ $JVMArguments}\
+			${JVMMainClass}\
 			${ArgsPassthru:+ $ArgsPassthru}
 
 
