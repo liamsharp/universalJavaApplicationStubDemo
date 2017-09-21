@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+  <dict>
+    <key>CFBundleName</key>
+    <string>UniversalJavaApplicationStubDemo</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.github.liamsharp</string>
+    <key>CFBundleVersion</key>
+    <string>8.2.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>8.2.0</string>
+    <key>CFBundleAllowMixedLocalizations</key>
+    <string>true</string>
+    <key>CFBundleExecutable</key>
+    <string>UniversalJavaApplicationStub</string>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>English</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleIconFile</key>
+    <string>frog.icns</string>
+    <key>NSHighResolutionCapable</key>
+    <string>true</string>
+
+    <key>CFBundleDocumentTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeName</key>
+        <string>Budle Type Name</string>
+        <key>CFBundleTypeExtensions</key>
+        <array>
+          <string>txt</string>
+        </array>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>LSTypeIsPackage</key>
+        <string>true</string>
+      </dict>
+    </array>
+
+    <key>JavaX</key>
+    <dict>
+      <key>MainClass</key>
+      <string>com.github.liamsharp.App</string>
+      <key>JVMVersion</key>
+      <string>1.7+</string>
+      <key>ClassPath</key>
+      <array>
+        <string>$JAVAROOT/UniversalJavaApplicationStubDemo-1.0-SNAPSHOT.jar</string>
+      </array>
+      <key>SplashFile</key>
+      <string>SplashScreen_Mac.png</string>
+      <key>Arguments</key>
+      <string>-enableassertions</string>
+    </dict>
+
+  </dict>
+</plist>
