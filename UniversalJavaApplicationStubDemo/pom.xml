@@ -47,7 +47,7 @@
               <addClasspath>true</addClasspath>
             </manifest>
             <manifestEntries>
-              <Main-Class>com.github.liamsharp.App</Main-Class>
+              <Main-Class>com.github.liamsharp.SwingApp</Main-Class>
             </manifestEntries>
           </archive>
         </configuration>

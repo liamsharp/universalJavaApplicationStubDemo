@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ##################################################################################
 #                                                                                #
 # universalJavaApplicationStub                                                   #
@@ -492,7 +493,8 @@ elif [ -f "$JAVACMD" ] && [ -x "$JAVACMD" ] ; then
 
 	# enable drag&drop to the dock icon
 	export CFProcessPath="$0"
-
+        echo $CFProcessPath >> /tmp/process_path.txt
+        
 	# remove Apples ProcessSerialNumber from passthru arguments (#39)
 	if [[ $@ == -psn* ]] ; then
 		ArgsPassthru=""

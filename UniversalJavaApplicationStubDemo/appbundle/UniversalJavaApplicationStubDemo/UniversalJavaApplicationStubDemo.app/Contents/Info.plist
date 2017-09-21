@@ -46,7 +46,7 @@
     <key>JavaX</key>
     <dict>
       <key>MainClass</key>
-      <string>com.github.liamsharp.App</string>
+      <string>com.github.liamsharp.SwingApp</string>
       <key>JVMVersion</key>
       <string>1.7+</string>
       <key>ClassPath</key>
@@ -56,7 +56,7 @@
       <key>SplashFile</key>
       <string>SplashScreen_Mac.png</string>
       <key>Arguments</key>
-      <string>-enableassertions</string>
+      <string>-enableassertions -Xmx1g</string>
     </dict>
 
   </dict>

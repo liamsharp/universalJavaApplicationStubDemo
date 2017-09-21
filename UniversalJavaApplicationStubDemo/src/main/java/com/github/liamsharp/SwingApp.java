@@ -5,7 +5,6 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -13,17 +12,12 @@ import javax.swing.SwingUtilities;
 
 import com.apple.eawt.Application;
 
-import javafx.scene.layout.BorderPane;
-
 
 @SuppressWarnings("restriction")
-public class App 
+public class SwingApp 
 {
     private static final int MB = 1024 * 1024;
 
-    
-
-    
     private static void createAndShowGUI(
         final List<String> args) 
     {
