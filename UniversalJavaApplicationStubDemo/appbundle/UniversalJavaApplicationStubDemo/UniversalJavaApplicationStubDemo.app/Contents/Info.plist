@@ -48,7 +48,7 @@
       <key>MainClass</key>
       <string>com.github.liamsharp.SwingApp</string>
       <key>JVMVersion</key>
-      <string>1.7+</string>
+      <string>1.7;1.8*</string>
       <key>ClassPath</key>
       <array>
         <string>$JAVAROOT/UniversalJavaApplicationStubDemo-1.0-SNAPSHOT.jar</string>
