@@ -55,8 +55,10 @@
       </array>
       <key>SplashFile</key>
       <string>SplashScreen_Mac.png</string>
+      <key>VMOptions</key>
+      <string>-Xmx1g</string>
       <key>Arguments</key>
-      <string>-enableassertions -Xmx1g</string>
+      <string>-enableassertions</string>
     </dict>
 
   </dict>
