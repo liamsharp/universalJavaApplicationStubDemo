@@ -58,7 +58,7 @@
       <key>VMOptions</key>
       <string>-Xmx1g</string>
       <key>Arguments</key>
-      <string>-enableassertions</string>
+      <string>-enableassertions "a second argument with spaces"</string>
     </dict>
 
   </dict>
