@@ -23,7 +23,7 @@
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleIconFile</key>
-    <string>frog.icns</string>
+    <string>icon</string>
     <key>NSHighResolutionCapable</key>
     <string>true</string>
 
