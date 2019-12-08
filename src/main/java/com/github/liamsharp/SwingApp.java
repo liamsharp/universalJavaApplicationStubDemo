@@ -16,6 +16,12 @@ import com.apple.eawt.Application;
 public class SwingApp {
 	private static final int MB = 1024 * 1024;
 
+	public static void main(String[] args) {
+		final Application appleApp = Application.getApplication();
+		appleApp.setOpenFileHandler(e -> SwingUtilities.invokeLater(() -> handleFileOpen(e.getFiles())));
+		javax.swing.SwingUtilities.invokeLater( () -> createAndShowGUI(Arrays.asList(args)));
+	}
+
 	private static void createAndShowGUI(final List<String> args) {
 		final JFrame frame = new JFrame(System.getProperty("java.version"));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,12 +51,6 @@ public class SwingApp {
 
 	private static void handleFileOpen(final List<File> files) {
 		JOptionPane.showMessageDialog(null, files);
-	}
-
-	public static void main(String[] args) {
-		final Application appleApp = Application.getApplication();
-		appleApp.setOpenFileHandler(e -> SwingUtilities.invokeLater(() -> handleFileOpen(e.getFiles())));
-		javax.swing.SwingUtilities.invokeLater( () -> createAndShowGUI(Arrays.asList(args)));
 	}
 
 }
