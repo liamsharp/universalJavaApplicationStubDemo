@@ -60,6 +60,11 @@
       <string>-Xmx1g</string>
       <key>Arguments</key>
       <string>-enableassertions "a second argument with spaces"</string>
+      <!-- <array>
+        <string>-full</string>
+        <string>-manager</string>
+        <string>"-slide-show left"</string>
+      </array> -->
     </dict>
 
   </dict>
