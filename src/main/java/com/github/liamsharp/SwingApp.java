@@ -43,7 +43,7 @@ public class SwingApp {
 						"java vendor: " + System.getProperty("java.vendor") + "<br/>" +
 						"java home: " + System.getProperty("java.home") + "<br/><br/>" +
 						
-						"classpath: " + classpath + "<br/><br/>" +
+						"classpath: " + classpath + "<br/>" +
 						
 						"maxMemory: " + maxMemory + "MB<br/><br/>" +
 						
