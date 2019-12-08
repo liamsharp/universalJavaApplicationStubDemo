@@ -11,8 +11,8 @@
 #                                                                                #
 # @author    Tobias Fischer                                                      #
 # @url       https://github.com/tofi86/universalJavaApplicationStub              #
-# @date      2018-02-25                                                          #
-# @version   3.0.0                                                               #
+# @date      2018-08-24                                                          #
+# @version   3.0.4                                                               #
 #                                                                                #
 ##################################################################################
 #                                                                                #
@@ -387,7 +387,7 @@ fi
 ################################################################################
 function get_java_version_from_cmd() {
 	# second sed command strips " and -ea from the version string
-	echo $("$1" -version 2>&1 | awk '/version/{print $NF}' | sed -E 's/"//g;s/-ea//g')
+	echo $("$1" -version 2>&1 | awk '/version/{print $3}' | sed -E 's/"//g;s/-ea//g')
 }
 
 
@@ -399,7 +399,7 @@ function get_java_version_from_cmd() {
 # @return  the major version (e.g. '7', '8' or '9', etc.)
 ################################################################################
 function extract_java_major_version() {
-	echo $(echo "$1" | sed -E 's/^1\.//;s/^([0-9]+)(-ea|(\.[0-9_.]{1,7})?)[+*]?$/\1/')
+	echo $(echo "$1" | sed -E 's/^1\.//;s/^([0-9]+)(-ea|(\.[0-9_.]{1,7})?)(-b[0-9]+-[0-9]+)?[+*]?$/\1/')
 }
 
 
@@ -411,8 +411,8 @@ function extract_java_major_version() {
 # @return  an 8 digit numeral ('1.8.0_45'->'08000045'; '9.1.13'->'09001013')
 ################################################################################
 function get_comparable_java_version() {
-	# cleaning: 1) remove leading '1.'; 2) remove 'a-Z' and '-*+' (e.g. '-ea'); 3) replace '_' with '.'
-	local cleaned=$(echo "$1" | sed -E 's/^1\.//g;s/[a-zA-Z+*\-]//g;s/_/./g')
+	# cleaning: 1) remove leading '1.'; 2) remove build string (e.g. '-b14-468'); 3) remove 'a-Z' and '-*+' (e.g. '-ea'); 4) replace '_' with '.'
+	local cleaned=$(echo "$1" | sed -E 's/^1\.//g;s/-b[0-9]+-[0-9]+$//g;s/[a-zA-Z+*\-]//g;s/_/./g')
 	# splitting at '.' into an array
 	local arr=( ${cleaned//./ } )
 	# echo a string with left padded version numbers
@@ -741,7 +741,7 @@ fi
 export CFProcessPath="$0"
 
 # remove Apples ProcessSerialNumber from passthru arguments (#39)
-if [[ $@ == -psn* ]] ; then
+if [[ "$*" == -psn* ]] ; then
 	ArgsPassthru=()
 else
 	ArgsPassthru=("$@")
@@ -756,18 +756,18 @@ stub_logger "[WorkingDirectory] ${WorkingDirectory}"
 # - splash image
 # - dock icon
 # - app name
-# - JVM options
-# - JVM default options
+# - JVM options / properties (-D)
+# - JVM default options (-X)
 # - main class
-# - main arguments
-# - passthru arguments
+# - main class arguments
+# - passthrough arguments from Terminal or Drag'n'Drop to Finder icon
 stub_logger "[Exec] \"$JAVACMD\" -cp \"${JVMClassPath}\" -splash:\"${ResourcesFolder}/${JVMSplashFile}\" -Xdock:icon=\"${ResourcesFolder}/${CFBundleIconFile}\" -Xdock:name=\"${CFBundleName}\" ${JVMOptionsArr:+$(printf "'%s' " "${JVMOptionsArr[@]}") }${JVMDefaultOptions:+$JVMDefaultOptions }${JVMMainClass}${MainArgsArr:+ $(printf "'%s' " "${MainArgsArr[@]}")}${ArgsPassthru:+ $(printf "'%s' " "${ArgsPassthru[@]}")}"
 exec "${JAVACMD}" \
 		-cp "${JVMClassPath}" \
 		-splash:"${ResourcesFolder}/${JVMSplashFile}" \
 		-Xdock:icon="${ResourcesFolder}/${CFBundleIconFile}" \
 		-Xdock:name="${CFBundleName}" \
-		${JVMOptions:+"$JVMOptions[@]}" }\
+		${JVMOptionsArr:+"${JVMOptionsArr[@]}" }\
 		${JVMDefaultOptions:+$JVMDefaultOptions }\
 		"${JVMMainClass}"\
 		${MainArgsArr:+ "${MainArgsArr[@]}"}\
