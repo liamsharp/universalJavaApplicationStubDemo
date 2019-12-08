@@ -23,7 +23,7 @@ public class SwingApp {
 	}
 
 	private static void createAndShowGUI(final List<String> args) {
-		final JFrame frame = new JFrame(System.getProperty("java.version"));
+		final JFrame frame = new JFrame("universalJavaApplicationStubDemo");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		final long maxMemory = Runtime.getRuntime().maxMemory() / MB;
@@ -37,10 +37,17 @@ public class SwingApp {
 
 		JLabel label = new JLabel(
 				"<html>" +
-						"Hello!<br/>" +
+						"Hello!<br/><br/>" +
+						
+						"java version: " + System.getProperty("java.version") + "<br/>" +
+						"java vendor: " + System.getProperty("java.vendor") + "<br/>" +
+						"java home: " + System.getProperty("java.home") + "<br/><br/>" +
+						
+						"classpath: " + classpath + "<br/><br/>" +
+						
+						"maxMemory: " + maxMemory + "MB<br/><br/>" +
+						
 						"args: " + args + "<br/>" +
-						"maxMemory: " + maxMemory + "M<br/>" +
-						"classpath: " + classpath +
 				"</html>");
 		frame.getContentPane().add(label);
 		frame.setMinimumSize(new Dimension(400, 300));
