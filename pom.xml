@@ -1,12 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.github.liamsharp</groupId>
   <artifactId>UniversalJavaApplicationStubDemo</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
+
   <name>UniversalJavaApplicationStubDemo</name>
-  <url>http://maven.apache.org</url>
+  <url>https://github.com/tofi86/universalJavaApplicationStubDemo</url>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -20,7 +23,6 @@
       <artifactId>AppleJavaExtensions</artifactId>
       <version>1.6</version>
     </dependency>
-    
   </dependencies>
 
   <repositories>
@@ -30,10 +32,10 @@
       <url>https://github.com/screamingfrog/Maven/raw/master/</url>
     </repository>
   </repositories>
-  
+
   <build>
     <plugins>
-      
+
       <!-- Creates a jar file -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -69,7 +71,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.2.1</version>
         <executions>
-          
+
           <execution>
             <id>dmg</id>
             <phase>package</phase>
@@ -87,8 +89,8 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>          
-      
+      </plugin>
+
     </plugins>
   </build>
 

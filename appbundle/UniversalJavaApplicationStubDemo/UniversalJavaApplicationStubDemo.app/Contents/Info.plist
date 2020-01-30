@@ -23,10 +23,10 @@
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleIconFile</key>
-    <string>frog.icns</string>
+    <string>icon</string>
     <key>NSHighResolutionCapable</key>
-    <string>true</string>
-
+    <string>true</string><key>NSAppleEventsUsageDescription</key>
+    <string>There was an error while launching the application. Please click OK to display a dialog with more information or cancel and view the syslog for details.</string>
     <key>CFBundleDocumentTypes</key>
     <array>
       <dict>
@@ -48,15 +48,22 @@
       <key>MainClass</key>
       <string>com.github.liamsharp.SwingApp</string>
       <key>JVMVersion</key>
-      <string>1.7+</string>
+      <string>1.7;1.8*</string>
       <key>ClassPath</key>
       <array>
         <string>$JAVAROOT/UniversalJavaApplicationStubDemo-1.0-SNAPSHOT.jar</string>
       </array>
       <key>SplashFile</key>
       <string>SplashScreen_Mac.png</string>
+      <key>VMOptions</key>
+      <string>-Xmx1g</string>
       <key>Arguments</key>
-      <string>-enableassertions -Xmx1g</string>
+      <string>-enableassertions "a second argument with spaces"</string>
+      <!-- <array>
+        <string>-full</string>
+        <string>-manager</string>
+        <string>"-slide-show left"</string>
+      </array> -->
     </dict>
 
   </dict>
